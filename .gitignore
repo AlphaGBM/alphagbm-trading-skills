@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+dist/
+build/
+.DS_Store
+*.log
+*.token
+*.secret
+*.pem
+*.key
+private/
+records/
