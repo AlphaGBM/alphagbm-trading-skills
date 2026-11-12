@@ -2,7 +2,7 @@
 name: alphagbm-research
 description: 结构化研究公司、行业和主题，先建立问题与证据地图，再形成可复核的研究结论。
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
   author: AlphaGBM
 ---
 

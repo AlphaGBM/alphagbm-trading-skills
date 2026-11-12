@@ -2,7 +2,7 @@
 name: alphagbm-deconstruct
 description: 拆解金融概念、指标、策略和市场叙事，给出定义、机制、适用条件、误区和可验证例子。
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
   author: AlphaGBM
 ---
 

@@ -2,7 +2,7 @@
 name: alphagbm-market-research
 description: 处理公开行情、基本面和市场数据的只读研究接口，明确时点、口径、延迟和缺失数据。
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
   author: AlphaGBM
 ---
 

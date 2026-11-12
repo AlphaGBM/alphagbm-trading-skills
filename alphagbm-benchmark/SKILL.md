@@ -2,7 +2,7 @@
 name: alphagbm-benchmark
 description: 对标公司、策略或研究方法，控制样本选择、口径差异和幸存者偏差。
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
   author: AlphaGBM
 ---
 

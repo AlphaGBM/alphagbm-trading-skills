@@ -2,7 +2,7 @@
 name: alphagbm-model
 description: 进行估值、情景、回测和压力测试，显式管理假设、数据版本、敏感性和模型失效。
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
   author: AlphaGBM
 ---
 

@@ -2,7 +2,7 @@
 name: alphagbm-diagnosis
 description: 诊断投资判断的证据质量、预案、风险与执行一致性，不替用户做买卖决定。
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
   author: AlphaGBM
 ---
 

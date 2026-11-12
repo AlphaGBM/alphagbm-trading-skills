@@ -2,7 +2,7 @@
 name: alphagbm-example
 description: 用一句话描述这个 skill 的边界、输入、输出和安全限制。
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
   author: AlphaGBM
 ---
 
