@@ -2,7 +2,7 @@
 name: alphagbm-trade
 description: 只读记录个人交易决策、持仓/成交复盘和规则版本，帮助比较计划与执行，不生成待提交订单。
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
   author: AlphaGBM
 ---
 

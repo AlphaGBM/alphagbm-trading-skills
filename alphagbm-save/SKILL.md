@@ -2,7 +2,7 @@
 name: alphagbm-save
 description: 在用户明确要求后，将研究、事件证据包或交易记录按版本化协议安全写入本地私有目录。
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
   author: AlphaGBM
 ---
 
@@ -15,3 +15,7 @@ metadata:
 ## 最小检查
 
 补齐 `record_id`、`schema_version`、创建时间、数据截止时间、来源和未知项；对缺失字段写 `UNKNOWN`，不填猜测值。写入后返回路径、版本和校验摘要。
+
+## 文件安全
+
+默认排他创建：目标路径已存在时拒绝写入并保留原字节；更正必须使用新版本/新路径并写 `parent_version`。预览模式不得创建、覆盖、修改索引或更新状态。

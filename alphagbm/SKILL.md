@@ -2,7 +2,7 @@
 name: alphagbm
 description: AlphaGBM 投研与交易工作流总路由。把问题拆成事实、证据、模型、决策和结果，默认只读，不执行交易。
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
   author: AlphaGBM
 ---
 
@@ -19,6 +19,8 @@ metadata:
 3. 说明数据是否实时、是否一手、是否只读；缺数据就降级，不猜。
 4. 输出中分开 `FACT`、`MANAGEMENT`、`MARKET`、`MODEL`、`INFERENCE`、`UNKNOWN`。
 5. 任何买卖方向问题先做证据与风险复核，不直接给出下单指令。
+
+“现在买还是卖”“该不该加仓”这类方向请求，即使只给了公司名，也先进入 `alphagbm-diagnosis`：索取目标、持有周期、风险预算、当前计划和失效条件；只有在诊断后仍需要研究事实时，才转 `alphagbm-research` 或 `alphagbm-event-attribution`。不能因为用户说了一个标的就先走公司研究。
 
 ## 路由表
 
