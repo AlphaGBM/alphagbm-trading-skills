@@ -1,8 +1,8 @@
 ---
-name: alphagbm-model
-description: 进行估值、情景、回测和压力测试，显式管理假设、数据版本、敏感性和模型失效。
+name: gbm-model
+description: AlphaGBM 估值、情景与压力测试。用户输入 /gbm-model，或要求三情景估值、NPV、现金流模型、盈亏平衡与模型假设复核时使用；记录数据版本、单位、敏感性和失效条件。不用于泛化机器学习 GBM 模型开发，不自动填补未知概率。
 metadata:
-  version: "0.1.1"
+  version: "0.2.0"
   author: AlphaGBM
 ---
 

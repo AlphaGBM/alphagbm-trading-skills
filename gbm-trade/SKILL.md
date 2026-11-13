@@ -1,8 +1,8 @@
 ---
-name: alphagbm-trade
-description: 只读记录个人交易决策、持仓/成交复盘和规则版本，帮助比较计划与执行，不生成待提交订单。
+name: gbm-trade
+description: AlphaGBM 交易记录与复盘。用户输入 /gbm-trade，或要求整理计划、持仓、委托、成交、部分平仓或成交更正时使用；区分订单与成交、已实现与未实现，保留规则版本。默认只读，写记录需明确授权，不生成或提交订单。
 metadata:
-  version: "0.1.1"
+  version: "0.2.0"
   author: AlphaGBM
 ---
 

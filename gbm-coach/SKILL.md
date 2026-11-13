@@ -1,8 +1,8 @@
 ---
-name: alphagbm-coach
-description: 根据交易记录和自述诊断一个最重要的能力缺口，设计可计数的训练和复测。
+name: gbm-coach
+description: AlphaGBM 交易执行训练。用户输入 /gbm-coach，或要求练习纪律、事前记录、退出执行或跟练复测时使用；一次只练一个可观察行为，按触发样本计数并约定复核时间。无记录不定级、不作心理诊断，不预测行情。
 metadata:
-  version: "0.1.1"
+  version: "0.2.0"
   author: AlphaGBM
 ---
 
