@@ -1,8 +1,8 @@
 ---
-name: alphagbm-market-research
-description: 处理公开行情、基本面和市场数据的只读研究接口，明确时点、口径、延迟和缺失数据。
+name: gbm-market-research
+description: AlphaGBM 行情与数据口径核验。用户输入 /gbm-market-research，或要求核对报价延迟、复权、分红、汇率、行情窗口与可比基准时使用；明确数据来源和缺口。只读，不执行交易或假定已接入券商。
 metadata:
-  version: "0.1.1"
+  version: "0.2.0"
   author: AlphaGBM
 ---
 

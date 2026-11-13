@@ -1,8 +1,8 @@
 ---
-name: alphagbm-benchmark
-description: 对标公司、策略或研究方法，控制样本选择、口径差异和幸存者偏差。
+name: gbm-benchmark
+description: AlphaGBM 同类对标。用户输入 /gbm-benchmark，或要求比较公司、策略、研究方法、费后表现与可复制性时使用；统一样本、窗口和风险口径，检查分组权重与幸存者偏差。不以单期排名作推荐。
 metadata:
-  version: "0.1.1"
+  version: "0.2.0"
   author: AlphaGBM
 ---
 

@@ -1,8 +1,8 @@
 ---
-name: alphagbm-event-attribution
-description: 用公司公告、监管披露、官方电话会/演示和公开市场报道，分析财报或公司事件后的市场反应与可证伪归因。
+name: gbm-event-attribution
+description: AlphaGBM 财报与事件归因。用户输入 /gbm-event-attribution，或问财报为何引发涨跌、公告后的异常波动、电话会预期差时使用；核对公告时间、事前共识与同窗行情，用证据、反事实和替代解释归因。不把行情变化当市场观点，不输出买卖指令。
 metadata:
-  version: "0.1.1"
+  version: "0.2.0"
   author: AlphaGBM
 ---
 
@@ -72,4 +72,4 @@ metadata:
 
 ## 边界
 
-本 skill 不荐股、不预测收益、不执行交易。若用户要求“现在买不买”，转到 `alphagbm-diagnosis`，先复核目标、风险预算、证据质量和失效条件。
+本 skill 不荐股、不预测收益、不执行交易。若用户要求“现在买不买”，转到 `gbm-diagnosis`，先复核目标、风险预算、证据质量和失效条件。

@@ -1,8 +1,8 @@
 ---
-name: alphagbm-research
-description: 结构化研究公司、行业和主题，先建立问题与证据地图，再形成可复核的研究结论。
+name: gbm-research
+description: AlphaGBM 公司、行业与主题研究。用户输入 /gbm-research，或要求研究一家公司、分析增长质量、产业链、竞争与经营风险时使用；建立证据和反证地图。公告后的价格解释交给 gbm-event-attribution，个人买卖判断交给 gbm-diagnosis。
 metadata:
-  version: "0.1.1"
+  version: "0.2.0"
   author: AlphaGBM
 ---
 

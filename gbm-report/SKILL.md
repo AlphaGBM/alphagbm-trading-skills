@@ -1,8 +1,8 @@
 ---
-name: alphagbm-report
-description: 生成可复核的 AlphaGBM 研究报告，把关键断言、来源、假设、反证和未知项组织成稳定结构。
+name: gbm-report
+description: AlphaGBM 研究报告与引用核验。用户输入 /gbm-report，或要求把已有研究整理成短报、证据报告、发布前核查或更正说明时使用；分开事实与观点，保留来源定位、链接验证和隐私检查状态。未执行检查不得声称通过。
 metadata:
-  version: "0.1.1"
+  version: "0.2.0"
   author: AlphaGBM
 ---
 

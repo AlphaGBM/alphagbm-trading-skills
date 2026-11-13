@@ -1,8 +1,8 @@
 ---
-name: alphagbm-save
-description: 在用户明确要求后，将研究、事件证据包或交易记录按版本化协议安全写入本地私有目录。
+name: gbm-save
+description: AlphaGBM 本地保存。用户输入 /gbm-save，或明确要求保存、存档研究或决策快照时使用；确认私有路径与版本，排他创建并保留旧字节。仅预览不得落盘，不自动同步，不将真实记录写入公开仓库。
 metadata:
-  version: "0.1.1"
+  version: "0.2.0"
   author: AlphaGBM
 ---
 

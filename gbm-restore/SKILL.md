@@ -1,8 +1,8 @@
 ---
-name: alphagbm-restore
-description: 从 AlphaGBM 本地记录恢复研究或决策上下文，保留旧版本和当时信息集。
+name: gbm-restore
+description: AlphaGBM 历史恢复。用户输入 /gbm-restore，或要求继续上次研究、按某个时点恢复记录、查找旧版本时使用；只读核验创建时间、数据截止与来源，保留后来信息边界。索引悬空不得伪造缺失版本。
 metadata:
-  version: "0.1.1"
+  version: "0.2.0"
   author: AlphaGBM
 ---
 
