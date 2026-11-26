@@ -6,6 +6,12 @@
 
 AlphaGBM Trading Skills 不预测价格、不替用户下单、不把相关性包装成因果性。它把研究过程拆成可复核的证据、假设、反证、风险边界和后续结果，尤其适合处理“财报出来后，股价为什么这样走”这类需要多来源核验的问题。
 
+## 提问与反馈 / Questions and feedback
+
+使用问题统一到 [AlphaGBM Skills Q&A](https://github.com/AlphaGBM/skills/discussions/categories/q-a)，安装失败、文档错误或明确改进可用[问题表单](https://github.com/AlphaGBM/skills/issues/new/choose)。请注明来自 `alphagbm-trading-skills`，以及相关的 `gbm*` 技能或文件。仅涉及本仓文件的缺陷也可以在本仓跟踪，不必重复开帖。
+
+English and Chinese are welcome; mention this repository and the affected Skill. 不要贴密钥、账户、私人持仓或未经许可的研报；讨论方法与证据，不提供个人买卖建议。入口与示例见[社区公告](https://github.com/AlphaGBM/skills/discussions/21)。
+
 ## 核心能力
 
 - **财报与事件归因**：以公司公告/监管披露为事实底座，用电话会、业绩演示和公开市场报道补足语境，区分已证实事实、管理层表述、市场叙事与 agent 推断。
