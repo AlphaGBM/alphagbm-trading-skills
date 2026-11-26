@@ -8,7 +8,7 @@ AlphaGBM Trading Skills 不预测价格、不替用户下单、不把相关性�
 
 ## 提问与反馈 / Questions and feedback
 
-使用问题统一到 [AlphaGBM Skills Q&A](https://github.com/AlphaGBM/skills/discussions/categories/q-a)，安装失败、文档错误或明确改进可用[问题表单](https://github.com/AlphaGBM/skills/issues/new/choose)。请注明来自 `alphagbm-trading-skills`，以及相关的 `gbm*` 技能或文件。仅涉及本仓文件的缺陷也可以在本仓跟踪，不必重复开帖。
+使用问题统一到 [AlphaGBM Skills Q&A](https://github.com/AlphaGBM/skills/discussions/categories/q-a)；所有新缺陷、安装失败、文档错误或明确改进，包括仅涉及本仓文件的问题，统一使用 Skills 的[问题表单](https://github.com/AlphaGBM/skills/issues/new/choose)。请注明来自 `alphagbm-trading-skills`，以及相关的 `gbm*` 技能或文件。若本仓已有对应 Issue，请在原帖继续；维护者负责保留或转移跟踪，不要求重复开帖。
 
 English and Chinese are welcome; mention this repository and the affected Skill. 不要贴密钥、账户、私人持仓或未经许可的研报；讨论方法与证据，不提供个人买卖建议。入口与示例见[社区公告](https://github.com/AlphaGBM/skills/discussions/21)。
 
@@ -68,6 +68,23 @@ English and Chinese are welcome; mention this repository and the affected Skill.
 无法取得原文时必须标记 `待核验`，不能把搜索摘要、模型记忆或二手转述写成已确认事实。
 
 ## 安装
+
+当前默认分支是 `feature/initial-release`，不是 `main`；从仓库首页或当前分支的文件链接进入。下面是一个仅在新临时项目内操作的 Codex 安装示例，不会覆盖全局技能。固定版本便于复核，升级时请先检查新版本和个人修改。
+
+```bash
+CHECK_ROOT=$(mktemp -d)
+git clone --branch feature/initial-release https://github.com/AlphaGBM/alphagbm-trading-skills.git "$CHECK_ROOT/source"
+git -C "$CHECK_ROOT/source" checkout --detach a0ecd079ab55a2db658608b42c13dd51aec1164c
+mkdir -p "$CHECK_ROOT/project/.agents/skills"
+cp -R "$CHECK_ROOT/source/_shared" "$CHECK_ROOT/project/.agents/skills/"
+for skill_dir in "$CHECK_ROOT/source"/gbm*; do
+  if [ -d "$skill_dir" ]; then
+    cp -R "$skill_dir" "$CHECK_ROOT/project/.agents/skills/"
+  fi
+done
+```
+
+以 `$CHECK_ROOT/project` 为 Codex 工作目录重新发现技能；不要把 `_shared` 当成独立技能。此布局已由 Codex CLI 0.147.0 实测发现全部 13 个技能，详见[安装记录](https://github.com/AlphaGBM/skills/blob/main/docs/INSTALLATION-CHECK-2026-11-27.md)。这不是模型执行或研究质量验收。清理时只删除本次生成的临时目录，不删除全局配置或原有技能。其他宿主仍需按其规则选择目录。
 
 将所需 `gbm*` 目录与 `_shared` 目录一起复制到宿主指定的 skills 目录，保持它们为同级目录。不要只复制单个 `SKILL.md`，否则共享协议会丢失。若目标目录已有 `_shared`，先人工检查冲突，不覆盖。各 skill 内的共享协议路径均相对于该 skill 的父目录解析。
 
