@@ -12,7 +12,9 @@
 - 不提交真实账户、真实持仓、客户数据、私人对话、token、密码或内部链接。
 - 不把“可能”“市场认为”写成事实；关键断言要补来源、时间窗和证据定位。
 - 不把单一事件窗口的相关性写成确定因果；至少记录基准、同业或宏观对照。
-- 运行 `python3 scripts/privacy_gate.py` 和 `python3 -m unittest discover -s tests -v`。
+- 运行 `python3 scripts/privacy_gate.py`、`python3 scripts/build_packages.py --check` 和 `python3 -m unittest discover -s tests -v`。
+
+共享协议只编辑 `_shared/` 中的源文件，再运行 `python3 scripts/build_packages.py` 更新包内副本。技能使用包内 `references/shared/` 链接，不引用安装器不会携带的兄弟目录。开发模板位于 `skill-template/SKILL.md.template`；创建正式技能时才将其复制为新技能目录中的 `SKILL.md`。
 
 ## 研究内容要求
 

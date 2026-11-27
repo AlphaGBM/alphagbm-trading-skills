@@ -16,7 +16,6 @@ class SkillNameTests(unittest.TestCase):
         return {
             path.parent.name: path
             for path in ROOT.glob("*/SKILL.md")
-            if path.parent.name != "skill-template"
         }
 
     def test_exactly_thirteen_short_named_skills(self):

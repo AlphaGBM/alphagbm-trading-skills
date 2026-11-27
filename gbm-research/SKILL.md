@@ -10,7 +10,7 @@ metadata:
 
 ## 工作方式
 
-先写研究问题和时间范围，再建立事实清单、竞争/产业链图、关键驱动、风险、反证和未知项。所有结论按 `_shared/evidence-standards.md` 标注。
+先写研究问题和时间范围，再建立事实清单、竞争/产业链图、关键驱动、风险、反证和未知项。所有结论按包内[证据标准](references/shared/evidence-standards.md)标注。
 
 ## 研究顺序
 

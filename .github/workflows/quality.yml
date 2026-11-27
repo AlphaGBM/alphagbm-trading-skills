@@ -13,4 +13,5 @@ jobs:
         with:
           python-version: "3.11"
       - run: python3 scripts/privacy_gate.py
+      - run: python3 scripts/build_packages.py --check
       - run: python3 -m unittest discover -s tests -v

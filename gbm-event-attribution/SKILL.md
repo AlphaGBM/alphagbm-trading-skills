@@ -68,7 +68,7 @@ metadata:
 
 ## 固定交付
 
-使用 `_shared/event-attribution.md` 模板，按以下顺序输出：结论摘要 → 双时间线（信息可得时间/市场交易时间）→ 证据矩阵 → 预期差 → 市场反应 → 主要/替代归因 → 风险与未知 → 下一次验证。所有关键数字带来源定位和时间窗；`FACT`、`MODEL`、`MANAGEMENT`、`MARKET` 不得合并成一个模糊条目。
+使用包内[事件归因模板](references/shared/event-attribution.md)，按以下顺序输出：结论摘要 → 双时间线（信息可得时间/市场交易时间）→ 证据矩阵 → 预期差 → 市场反应 → 主要/替代归因 → 风险与未知 → 下一次验证。所有关键数字带来源定位和时间窗；`FACT`、`MODEL`、`MANAGEMENT`、`MARKET` 不得合并成一个模糊条目。
 
 ## 边界
 

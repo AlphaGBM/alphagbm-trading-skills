@@ -69,14 +69,21 @@ English and Chinese are welcome; mention this repository and the affected Skill.
 
 ## 安装
 
-当前默认分支是 `feature/initial-release`，不是 `main`；从仓库首页或当前分支的文件链接进入。下面是一个仅在新临时项目内操作的 Codex 安装示例，不会覆盖全局技能。固定版本便于复核，升级时请先检查新版本和个人修改。
+当前默认分支是 `feature/initial-release`，不是 `main`。先准备好要使用的 AI 客户端，再在新项目内明确选择目标安装；下面只安装到 Codex，不安装全局技能：
+
+```bash
+npx skills@1.9.0 add AlphaGBM/alphagbm-trading-skills --skill '*' --agent codex --copy -y
+```
+
+正式技能为 13 个，开发模板不参与发现。只需要一个时，将 `'*'` 改为 `gbm-event-attribution` 等具体名称；总路由 `gbm` 要调用其他技能时，需要同时安装对应子技能。使用 Claude Code 或 Cursor 时，将 `codex` 改为 `claude-code` 或 `cursor`，不要在非交互安装中省略 `--agent`。此安装器版本的 Codex/Cursor 使用 `.agents/skills`，Claude Code 使用 `.claude/skills`。
+
+技能引用的协议已放入各自的 `references/shared/`，不用另外复制 `_shared`。升级已有安装后请检查实际文件与客户端发现结果。也可以从源码复制完整技能目录；以下仅操作新临时项目并打印具体修订，便于记录：
 
 ```bash
 CHECK_ROOT=$(mktemp -d)
 git clone --branch feature/initial-release https://github.com/AlphaGBM/alphagbm-trading-skills.git "$CHECK_ROOT/source"
-git -C "$CHECK_ROOT/source" checkout --detach a0ecd079ab55a2db658608b42c13dd51aec1164c
+git -C "$CHECK_ROOT/source" rev-parse HEAD
 mkdir -p "$CHECK_ROOT/project/.agents/skills"
-cp -R "$CHECK_ROOT/source/_shared" "$CHECK_ROOT/project/.agents/skills/"
 for skill_dir in "$CHECK_ROOT/source"/gbm*; do
   if [ -d "$skill_dir" ]; then
     cp -R "$skill_dir" "$CHECK_ROOT/project/.agents/skills/"
@@ -84,16 +91,16 @@ for skill_dir in "$CHECK_ROOT/source"/gbm*; do
 done
 ```
 
-以 `$CHECK_ROOT/project` 为 Codex 工作目录重新发现技能；不要把 `_shared` 当成独立技能。此布局已由 Codex CLI 0.147.0 实测发现全部 13 个技能，详见[安装记录](https://github.com/AlphaGBM/skills/blob/main/docs/INSTALLATION-CHECK-2026-11-27.md)。这不是模型执行或研究质量验收。清理时只删除本次生成的临时目录，不删除全局配置或原有技能。其他宿主仍需按其规则选择目录。
+以 `$CHECK_ROOT/project` 为 Codex 工作目录重新发现技能。[此前安装记录](https://github.com/AlphaGBM/skills/blob/main/docs/INSTALLATION-CHECK-2026-11-27.md)验证的是旧版复制布局，不应当作当前版本或模型执行验收。需要固定部署版本时，先选择已审查的提交并 checkout，再复制和记录修订；不要把浮动 HEAD 当成固定版本。清理时只删除本次生成的临时目录，不删除全局配置或原有技能。
 
-将所需 `gbm*` 目录与 `_shared` 目录一起复制到宿主指定的 skills 目录，保持它们为同级目录。不要只复制单个 `SKILL.md`，否则共享协议会丢失。若目标目录已有 `_shared`，先人工检查冲突，不覆盖。各 skill 内的共享协议路径均相对于该 skill 的父目录解析。
+复制时保留技能的整个目录，不要只复制 `SKILL.md`。`_shared/` 现在是维护者编辑源，包内协议由生成器同步；用户安装后不依赖仓库根目录或其他技能目录中的协议。
 
 ### 从 0.1.x 升级
 
 本次是技能注册名迁移：`alphagbm` → `gbm`，其余 12 个 `alphagbm-后缀` → `gbm-相同后缀`；完整的新名称见入口清单。仓库地址、品牌和作者不变。
 
 1. 先盘点旧安装目录与个人修改，备份自定义内容和私有记录；不要用通配符删除。
-2. 安装对应的新目录和共享协议，更新宿主中的技能路径、收藏及显式调用名。
+2. 安装对应的新技能完整目录（含包内协议），更新宿主中的技能路径、收藏及显式调用名。
 3. 确认新版可发现后，在宿主中停用旧的这 13 个入口，避免新旧重复命中。仓库不保留双套技能或自动旧名别名。
 4. 按宿主要求重新加载技能目录，检查 `gbm` 及所需子技能可选。既有记录内容、记录路径和历史证据不要因技能改名而改写。
 
