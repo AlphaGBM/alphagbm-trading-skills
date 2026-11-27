@@ -79,6 +79,8 @@ npx skills@1.9.0 add AlphaGBM/alphagbm-trading-skills --skill '*' --agent codex 
 
 技能引用的协议已放入各自的 `references/shared/`，不用另外复制 `_shared`。升级已有安装后请检查实际文件与客户端发现结果。也可以从源码复制完整技能目录；以下仅操作新临时项目并打印具体修订，便于记录：
 
+[本轮安装验收](https://github.com/AlphaGBM/skills/blob/main/docs/INSTALLATION-FIRST-USE-2026-11-27.md)记录了三种目标目录的真实安装、13 个正式技能与包内协议校验，以及 Codex 发现结果；不代表 Claude Code/Cursor 模型执行或在线研究已验收。
+
 ```bash
 CHECK_ROOT=$(mktemp -d)
 git clone --branch feature/initial-release https://github.com/AlphaGBM/alphagbm-trading-skills.git "$CHECK_ROOT/source"
