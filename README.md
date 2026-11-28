@@ -2,9 +2,17 @@
 
 面向 AI agent 的公开投研、财报事件归因、交易复盘与研究沉淀工作流。
 
-**状态：0.2.0 短触发名迁移版。** 当前包含 13 个工作流说明及两个本地辅助脚本，不是完整交易平台。尚无行情/券商/API 集成、回测引擎、收益计算器或自动存档服务；各宿主的真实任务效果仍待验证。单测只验证辅助脚本，不证明研究结论正确或策略有效。
+**状态：0.2.0 方法协议，onboarding-v1 交付体验更新。** 当前包含 13 个工作流说明及两个本地辅助脚本，不是完整交易平台。尚无行情/券商/API 集成、回测引擎、收益计算器或自动存档服务；各宿主的真实任务效果仍待验证。单测验证辅助脚本、包结构与提示规范，不证明研究结论正确或策略有效。
 
 AlphaGBM Trading Skills 不预测价格、不替用户下单、不把相关性包装成因果性。它把研究过程拆成可复核的证据、假设、反证、风险边界和后续结果，尤其适合处理“财报出来后，股价为什么这样走”这类需要多来源核验的问题。
+
+## 先完成一个任务 / Start with one task
+
+- **解释事件**：「使用 gbm-event-attribution，检查这份公告后的波动；先给结论和替代解释，再列证据与缺口。」
+- **复盘判断**：「使用 gbm-trade，只读复盘这次决策；按当时已知信息评估，不保存、不下单。」
+- **整理短报**：“Use gbm-report to turn these materials into a concise evidence-backed brief. Keep facts, calculations and inferences separate.”
+
+跟随你的语言，先给关键判断，再给最多三条发现、反证与核验底稿；已有材料就先做可支持的部分，不要求先备齐全套数据库。这里没有附带行情连接或账号权限。查看[安装与升级](docs/INSTALLATION.md)和[结果示例](docs/EXPERIENCE.md)。想比较投资方法可用 [Investment Masters](https://github.com/AlphaGBM/investment-masters)；账号研究与公开资料入口见 [AlphaGBM Skills](https://github.com/AlphaGBM/skills)，各自权限另行判断。
 
 ## 提问与反馈 / Questions and feedback
 
@@ -26,7 +34,7 @@ English and Chinese are welcome; mention this repository and the affected Skill.
 
 ## 快速触发
 
-记一个入口即可：**`/gbm` + 你想做的事**。知道具体技能时也可直接用 `/gbm-xxx`。
+记一个入口即可：**“使用 gbm，帮我……”**。宿主支持斜杠调用时也可用 `/gbm`；知道具体技能时可直接选对应名称。只安装总路由不会自动获得其他技能。
 
 ```text
 /gbm 财报归因：这家公司公告后为何下跌？
@@ -72,7 +80,7 @@ English and Chinese are welcome; mention this repository and the affected Skill.
 当前默认分支是 `feature/initial-release`，不是 `main`。先准备好要使用的 AI 客户端，再在新项目内明确选择目标安装；下面只安装到 Codex，不安装全局技能：
 
 ```bash
-npx skills@1.9.0 add AlphaGBM/alphagbm-trading-skills --skill '*' --agent codex --copy -y
+npx skills@1.9.0 add https://github.com/AlphaGBM/alphagbm-trading-skills/tree/onboarding-v1 --skill '*' --agent codex --copy -y
 ```
 
 正式技能为 13 个，开发模板不参与发现。只需要一个时，将 `'*'` 改为 `gbm-event-attribution` 等具体名称；总路由 `gbm` 要调用其他技能时，需要同时安装对应子技能。使用 Claude Code 或 Cursor 时，将 `codex` 改为 `claude-code` 或 `cursor`，不要在非交互安装中省略 `--agent`。此安装器版本的 Codex/Cursor 使用 `.agents/skills`，Claude Code 使用 `.claude/skills`。
