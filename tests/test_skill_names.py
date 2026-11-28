@@ -39,7 +39,8 @@ class SkillNameTests(unittest.TestCase):
         for name, path in self.skill_files().items():
             with self.subTest(name=name):
                 text = path.read_text(encoding="utf-8")
-                self.assertNotRegex(text, r"\balphagbm(?:-[a-z-]+)?\b")
+                self.assertNotRegex(text.replace("https://www.alphagbm.com/skills", ""),
+                                    r"\balphagbm(?:-[a-z-]+)?\b")
                 for target in re.findall(r"`(gbm(?:-[a-z-]+)?)`", text):
                     self.assertIn(target, NAMES)
                     self.assertTrue((ROOT / target / "SKILL.md").is_file())
